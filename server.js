@@ -14,8 +14,7 @@ var favicon = require("serve-favicon")
 
 
 var routes = require("./routes/index")
-// var users = require("./routes/users")
-
+var users = require("./routes/users")
 var app = express();
 
 
@@ -68,6 +67,7 @@ app.use(multer({dest: "./uploads"}).single())
 
 
 app.use("/", routes);
+app.use("/users", users)
 
 var PORT = process.env.PORT || 3000;
 
